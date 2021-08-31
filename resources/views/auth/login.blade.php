@@ -6,7 +6,7 @@
 
   <div class="signin-sidebar">
     <div class="signin-sidebar-body">
-      <a href="dashboard-one.html" class="sidebar-logo mg-b-40"><span>Accounting</span></a>
+      <a href="dashboard-one.html" class="sidebar-logo mg-b-40"><span>Stock Control</span></a>
       <h4 class="signin-title">Welcome back!</h4>
       <h5 class="signin-subtitle">Please signin to continue.</h5>
 

@@ -12,7 +12,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    <title>Accounting System</title>
+    <title>Stock Control</title>
 
     <!-- vendor css -->
     <link href="{{ asset('lib/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">

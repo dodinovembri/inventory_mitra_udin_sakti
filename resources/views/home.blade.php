@@ -76,11 +76,10 @@
 															<span aria-hidden="true"><i data-feather="x"></i></span>
 														</button>
 													</div>
-													<form action="{{ url('update', $value->id) }}" method="POST">
+													<form action="{{ url('update_purchasing', $value->id) }}" method="POST">
 														@csrf
 														<div class="modal-body">
 															<div class="row row-sm">
-																<input type="hidden" name="type" value="0">
 																<div class="col-sm-3">
 																	<b><label class="form-label">Tanggal</label></b>
 																</div>
@@ -130,7 +129,7 @@
 															<span aria-hidden="true"><i data-feather="x"></i></span>
 														</button>
 													</div>
-													<form action="{{ url('update', $value->id) }}" method="POST">
+													<form action="{{ url('update_sales', $value->id) }}" method="POST">
 														@csrf
 														<div class="modal-body">
 															<div class="row row-sm">

@@ -62,25 +62,29 @@ class HomeController extends Controller
         return view('edit', $data);
     }
 
-    public function update(Request $request, $id)
+    public function update_purchasing(Request $request, $id)
     {        
         $update = ProductModel::find($id);  
         $product_code = $request->product_code;
-        $type = $request->type;
-        if ($type == 0) {
-            $quantity = $update->quantity + $request->quantity;
-            $update->quantity = $quantity;
-            $update->update();
-        }elseif ($type == 1){
-            $quantity = $update->quantity - $request->quantity;
-            if ($quantity < 0) {
-                return redirect(url('/'))->with('message', "Quantity Produk $product_code tidak cukup!");
-            }else{
-                $update->quantity = $quantity;         
-                $update->update();
-            }
-        }
+        $quantity = $update->quantity + $request->quantity;
+        $update->quantity = $quantity;
+        $update->update();
+
         return redirect(url('/'))->with('message', "Quantity Produk $product_code berhasil di update !");  
+    }    
+
+    public function update_sales(Request $request, $id)
+    {        
+        $update = ProductModel::find($id);  
+        $product_code = $request->product_code;
+        $quantity = $update->quantity - $request->quantity;
+        if ($quantity < 0) {
+            return redirect(url('/'))->with('message', "Quantity Produk $product_code tidak cukup!");
+        }else{
+            $update->quantity = $quantity;         
+            $update->update();
+            return redirect(url('/'))->with('message', "Quantity Produk $product_code berhasil di update !");  
+        }
     }
 
     public function update_data(Request $request, $id)

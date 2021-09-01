@@ -35,25 +35,16 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        /*
-        | Checkin item code if exists
-        */
         $product_code = $request->input('product_code');
-        $check = ProductModel::where('product_code', $product_code)->first();
-
-        if ($check) {
-            return redirect(url('/'))->with('info', "Kode Produk $product_code sudah tersedia !");
-        }else{
             
-            $insert = new ProductModel();
-            $insert->product_code = $request->product_code;        
-            $insert->product_name = $request->product_name;        
-            $insert->quantity = $request->quantity;        
-            $insert->description = $request->description;        
-            $insert->save();
+        $insert = new ProductModel();
+        $insert->product_code = $request->product_code;        
+        $insert->product_name = $request->product_name;        
+        $insert->quantity = $request->quantity;        
+        $insert->description = $request->description;        
+        $insert->save();
 
-            return redirect(url('/'))->with('message', "Produk $product_code berhasil ditambahkan!");
-        }
+        return redirect(url('/'))->with('message', "Produk $product_code berhasil ditambahkan!");
     }
 
     public function edit($id)

@@ -65,7 +65,10 @@
 											<td>{{ $value->quantity }}</td>
 											<td><a href="#purchasing{{ $value->id }}" data-toggle="modal"><i class="fa fa-truck" style="margin-left: 8px"></i> Pilih</a></td>
 											<td><a href="#sales{{ $value->id }}" data-toggle="modal"><i class="fa fa-truck" style="margin-left: 8px"></i> Pilih</a></td>
-											<td><a href="{{ url('edit', $value->id) }}"><i class="fa fa-edit" style="margin-left: 8px"></i> Ubah</a></td>
+											<td>
+												<a href="{{ url('edit', $value->id) }}"><i class="fa fa-edit" style="margin-left: 8px"></i></a>
+												<a href="#destroy{{ $value->id }}" data-toggle="modal"><i class="fa fa-trash" style="margin-left: 8px"></i></a>
+											</td>
 										</tr>
 										<div class="modal fade" id="purchasing{{ $value->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 											<div class="modal-dialog" role="document">
@@ -174,6 +177,25 @@
 												</div>
 											</div>
 										</div>
+										<div class="modal fade" id="destroy{{ $value->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h6 class="modal-title" id="exampleModalLabel">Barang Keluar</h6>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true"><i data-feather="x"></i></span>
+														</button>
+													</div>
+														<div class="modal-body">
+															Anda yakin ingin menghapus data ini?
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+															<a href="{{ url('destroy', $value->id) }}"><button type="button" class="btn btn-primary">Hapus</button></a>
+														</div>
+												</div>
+											</div>
+										</div>										
 									<?php } ?>
 								</tbody>
 							</table>

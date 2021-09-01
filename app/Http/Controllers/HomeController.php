@@ -98,4 +98,13 @@ class HomeController extends Controller
 
         return redirect(url('/'))->with('message', "Produk $product_code berhasil di update!");
     }
+
+    public function destroy($id)
+    {
+        $findtodelete = ProductModel::find($id);
+        $product_code = $findtodelete->product_code;
+        $findtodelete->delete();
+
+        return redirect(url('/'))->with('message', "Produk $product_code berhasil dihapus !"); 
+    }
 }

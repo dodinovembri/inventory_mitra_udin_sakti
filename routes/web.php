@@ -26,6 +26,8 @@ Route::get('/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit'])->
 Route::post('/update_data/{id}', [App\Http\Controllers\HomeController::class, 'update_data'])->name('update_data');
 Route::post('/update_purchasing/{id}', [App\Http\Controllers\HomeController::class, 'update_purchasing'])->name('update_purchasing');
 Route::post('/update_sales/{id}', [App\Http\Controllers\HomeController::class, 'update_sales'])->name('update_sales');
+Route::get('/destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('destroy');
+
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('index');
 Route::post('/profile/update/{id}', [App\Http\Controllers\ProfileController::class, 'update'])->name('update');
